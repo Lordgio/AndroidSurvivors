@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="El Proyecto">
+        <menu>
+            <item
+                android:id="@+id/objetivos"
+                android:icon="@drawable/ic_objetivos"
+                android:title="Objetivos del curso" />
+            <item
+                android:id="@+id/temario"
+                android:icon="@drawable/ic_temario"
+                android:title="Temario y recursos" />
+            <item
+                android:id="@+id/profesor"
+                android:icon="@drawable/ic_profesor"
+                android:title="Nuestro profesor"/>
+            <item
+                android:id="@+id/empresas"
+                android:icon="@drawable/ic_empresas"
+                android:title="Empresas colaboradoras"/>
+        </menu>
+    </item>
+
+    <item android:title="Participantes">
+        <menu>
+            <item
+                android:id="@+id/nosotros"
+                android:icon="@drawable/ic_nosotros"
+                android:title="Quiénes somos" />
+            <item
+                android:id="@+id/proyectos"
+                android:icon="@drawable/ic_proyectos"
+                android:title="Nuestros proyectos" />
+            <item
+                android:id="@+id/noticias"
+                android:icon="@drawable/ic_noticias"
+                android:title="Noticias"/>
+
+        </menu>
+    </item>
+
+</menu>
