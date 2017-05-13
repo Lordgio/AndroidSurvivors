@@ -61,14 +61,17 @@ public class ProfesorActivity extends AppCompatActivity
             Intent intent_profesor=new Intent(this,ProfesorActivity.class);
             this.startActivity(intent_profesor);
         } else if (id == R.id.empresas) {
-
+            Intent intent_empresas=new Intent(this,EmpresasActivity.class);
+            this.startActivity(intent_empresas);
         } else if (id == R.id.nosotros) {
             Intent intent_nosotros = new Intent(this, ParticipantesActivity.class);
             this.startActivity(intent_nosotros);
         } else if (id == R.id.proyectos) {
-
+            Intent intent_proyectos = new Intent(this, ProyectosActivity.class);
+            this.startActivity(intent_proyectos);
         } else if (id == R.id.noticias) {
-
+            Intent intent_noticias = new Intent(this, NoticiasActivity.class);
+            this.startActivity(intent_noticias);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -14,22 +14,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
 
-public class TemarioActivity extends AppCompatActivity
+public class NoticiasActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ExpandableListView tema1,tema2,tema3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temario);
+        setContentView(R.layout.activity_noticias);
 
-        tema1=(ExpandableListView)this.findViewById(R.id.lista_tema1);
-        tema2=(ExpandableListView)this.findViewById(R.id.lista_tema2);
-        tema3=(ExpandableListView)this.findViewById(R.id.lista_tema3);
 
         //Creación del menu lateral
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
