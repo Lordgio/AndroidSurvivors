@@ -16,7 +16,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/fotoPerfil"
             android:layout_width="103dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_nosotros" />
@@ -30,6 +30,7 @@
                 android:id="@+id/tv_nombre_participante"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:text="Nombre participante"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -55,6 +56,7 @@
                     android:layout_weight="17.11"
                     android:background="@android:color/transparent"
                     android:cropToPadding="true"
+                    android:paddingLeft="10dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@mipmap/linkedin2" />
 
@@ -66,7 +68,7 @@
                     android:layout_weight="1"
                     android:scaleType="fitXY"
                     android:text="Añadir contacto"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
         </LinearLayout>

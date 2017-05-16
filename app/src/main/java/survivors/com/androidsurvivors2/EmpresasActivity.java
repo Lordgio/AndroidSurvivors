@@ -53,7 +53,8 @@ public class EmpresasActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.objetivos) {
-            // Handle the camera action
+            Intent intent_objetivo=new Intent(this,ObjetivoActivity.class);
+            this.startActivity(intent_objetivo);
         } else if (id == R.id.temario) {
             Intent intent_temario = new Intent(this, TemarioActivity.class);
             this.startActivity(intent_temario);

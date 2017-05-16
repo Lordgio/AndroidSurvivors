@@ -8,13 +8,126 @@
     tools:context="survivors.com.androidsurvivors2.ObjetivoActivity"
     tools:showIn="@layout/app_bar_objetivo">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Objetivos del curso"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                android:text="A lo largo de los tres módulos y de los tres IDEs asociados a cada uno (PSeint, Eclipse y Android Studio) hemos ido evolucionando como desarrolladores."
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                android:text="Fundamentos de programación"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                android:text="Nuestros comienzos con PSeint y el uso del pseudocódigo nos han permitido familiarizarnos con la lógica de la programación así como el pensamiento estructurado a la hora de enfocar un problema a resolver.  Hemos adquirido la importancia de la Programación Orientada a Objetos (P.O.O.), base del lenguaje Java. "
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                android:text="Programación en Java"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                android:text="Con Eclipse comenzamos con la creación de nuestros primeros programas, básicos como la creación de calculadoras y agendas hasta llegar a otros más complejos, en los que aplicamos conceptos tan importantes como la herencia y el polimorfismo,  o en el que hicimos uso de ficheros o BBDD para guardar la información.  También, realizamos nuestras primeras comunicaciones con servidores en las que utilizamos los procesos multitarea para facilitar la ejecución del programa."
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                android:text="Programación en Android"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                android:text="Por último, en AndroidStudio, creamos nuestra primera app Android en las que aprendimos a diseñar la interfaz gráfica de toda app. Hemos ido moviéndonos entre las distintas componentes y hemos reforzado la persistencia de la información y las comunicaciones.  Se ha hecho especial hincapié en la geolocalización y el uso del API de Google maps, que nos ha permitido añadir mapas a nuestras app, base de nuestro proyecto final."
+                android:textSize="16sp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

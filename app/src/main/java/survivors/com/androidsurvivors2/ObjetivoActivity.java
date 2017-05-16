@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 import modelo.GestionParticipantes;
 import modelo.Participante;
+import modelo.Proyecto;
 
 public class ObjetivoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,9 +32,13 @@ public class ObjetivoActivity extends AppCompatActivity
         setContentView(R.layout.activity_objetivo);
 
         gp=new GestionParticipantes(this);
-        if(gp.comprobarParticipantes()!=10){
+        if(gp.comprobarParticipantes()!=8){
             AñadirParticipantes añadir=new AñadirParticipantes();
             añadir.execute();
+        }
+        if(gp.comprobarProyectos()!=6){
+            AñadirProyectos aproyectos=new AñadirProyectos();
+            aproyectos.execute();
         }
 
         //Creación del menu lateral
@@ -65,7 +70,8 @@ public class ObjetivoActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.objetivos) {
-            // Handle the camera action
+            Intent intent_objetivo=new Intent(this,ObjetivoActivity.class);
+            this.startActivity(intent_objetivo);
         } else if (id == R.id.temario) {
             Intent intent_temario = new Intent(this, TemarioActivity.class);
             this.startActivity(intent_temario);
@@ -116,6 +122,33 @@ public class ObjetivoActivity extends AppCompatActivity
                 ex.printStackTrace();
             }
             return parts;
+        }
+    }
+
+    class AñadirProyectos extends AsyncTask<Void,Void,ArrayList<Proyecto>>{
+        @Override
+        protected void onPostExecute(ArrayList<Proyecto> proyectos) {
+            for(int i=0;i<proyectos.size();i++){
+                gp.altaProyecto(proyectos.get(i));
+            }
+        }
+
+        @Override
+        protected ArrayList<Proyecto> doInBackground(Void... params) {
+            InputStream fichero=getResources().openRawResource(R.raw.proyectos);
+            BufferedReader bf=new BufferedReader(new InputStreamReader(fichero));
+            String s;
+            ArrayList<Proyecto> proy=new ArrayList<>();
+            try {
+                while ((s = bf.readLine())!=null) {
+                    String[] datos = s.split("[|]");
+                    Proyecto p = new Proyecto(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5]);
+                    proy.add(p);
+                }
+            }catch(IOException ex) {
+                ex.printStackTrace();
+            }
+            return proy;
         }
     }
 }

@@ -2,6 +2,7 @@ package survivors.com.androidsurvivors2;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -37,6 +38,11 @@ public class ProfesorActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public void linkedin(View v){
+        Intent intent=new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.linkedin.com/in/antonio-martin-077846b/"));
+        this.startActivity(intent);
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -53,7 +59,8 @@ public class ProfesorActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.objetivos) {
-            // Handle the camera action
+            Intent intent_objetivo=new Intent(this,ObjetivoActivity.class);
+            this.startActivity(intent_objetivo);
         } else if (id == R.id.temario) {
             Intent intent_temario = new Intent(this, TemarioActivity.class);
             this.startActivity(intent_temario);

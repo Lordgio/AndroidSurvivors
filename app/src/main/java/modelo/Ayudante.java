@@ -20,11 +20,17 @@ public class Ayudante extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Se le llama para construir las tablas de la base de datos.
-        //Instruccion SQL de creacion de una tabla.
-        String sqlCreaTabla="create table participantes (_id integer primary key autoincrement,";
-        sqlCreaTabla+="nombre text,descripcion text,linkedin text,email text,telefono integer)";
-        //Ejecutamos la instrucción.
-        db.execSQL(sqlCreaTabla);
+        //Instruccion SQL de creacion de la tabla de participantes.
+        String sqlCrearTabla1="create table participantes (_id integer primary key autoincrement,";
+        sqlCrearTabla1+="nombre text,descripcion text,linkedin text,email text,telefono integer)";
+        //Ejecutar la instrucción 1.
+        db.execSQL(sqlCrearTabla1);
+        //Instruccion SQL de creacion de la tabla de proyectos.
+        String sqlCrearTabla2="create table proyectos (_id integer primary key autoincrement,";
+        sqlCrearTabla2+="nombre text,descripcion text,participante1 text,participante2 text,participante3 text,github text)";
+        //Ejecutar instruccion 2.
+        db.execSQL(sqlCrearTabla2);
+
     }
 
     @Override

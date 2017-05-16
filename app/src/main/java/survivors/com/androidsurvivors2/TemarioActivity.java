@@ -21,15 +21,10 @@ import android.widget.SimpleExpandableListAdapter;
 public class TemarioActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ExpandableListView tema1,tema2,tema3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temario);
-
-        tema1=(ExpandableListView)this.findViewById(R.id.lista_tema1);
-        tema2=(ExpandableListView)this.findViewById(R.id.lista_tema2);
-        tema3=(ExpandableListView)this.findViewById(R.id.lista_tema3);
 
         //Creación del menu lateral
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -60,7 +55,8 @@ public class TemarioActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.objetivos) {
-            // Handle the camera action
+            Intent intent_objetivo=new Intent(this,ObjetivoActivity.class);
+            this.startActivity(intent_objetivo);
         } else if (id == R.id.temario) {
             Intent intent_temario = new Intent(this, TemarioActivity.class);
             this.startActivity(intent_temario);
