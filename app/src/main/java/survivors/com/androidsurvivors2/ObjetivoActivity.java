@@ -31,16 +31,6 @@ public class ObjetivoActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_objetivo);
 
-        gp=new GestionParticipantes(this);
-        if(gp.comprobarParticipantes()!=8){
-            AñadirParticipantes añadir=new AñadirParticipantes();
-            añadir.execute();
-        }
-        if(gp.comprobarProyectos()!=6){
-            AñadirProyectos aproyectos=new AñadirProyectos();
-            aproyectos.execute();
-        }
-
         //Creación del menu lateral
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -87,68 +77,13 @@ public class ObjetivoActivity extends AppCompatActivity
         } else if (id == R.id.proyectos) {
             Intent intent_proyectos = new Intent(this, ProyectosActivity.class);
             this.startActivity(intent_proyectos);
-        } else if (id == R.id.noticias) {
+        } /*else if (id == R.id.noticias) {
             Intent intent_noticias = new Intent(this, NoticiasActivity.class);
             this.startActivity(intent_noticias);
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    class AñadirParticipantes extends AsyncTask<Void,Void,ArrayList<Participante>>{
-        @Override
-        protected void onPostExecute(ArrayList<Participante> parts) {
-            //gp.eliminarTodos();
-            for(int i=0;i<parts.size();i++){
-                gp.altaParticipante(parts.get(i));
-            }
-        }
-
-        @Override
-        protected ArrayList<Participante> doInBackground(Void... params) {
-            InputStream fichero=getResources().openRawResource(R.raw.participantes);
-            BufferedReader bf=new BufferedReader(new InputStreamReader(fichero));
-            String s;
-            ArrayList<Participante> parts=new ArrayList<>();
-            try {
-                while ((s = bf.readLine())!=null) {
-                    String[] datos = s.split("[|]");
-                    Participante p = new Participante(datos[0], datos[1], datos[2], datos[3], Integer.parseInt(datos[4]));
-                    parts.add(p);
-                }
-            }catch(IOException ex) {
-                ex.printStackTrace();
-            }
-            return parts;
-        }
-    }
-
-    class AñadirProyectos extends AsyncTask<Void,Void,ArrayList<Proyecto>>{
-        @Override
-        protected void onPostExecute(ArrayList<Proyecto> proyectos) {
-            for(int i=0;i<proyectos.size();i++){
-                gp.altaProyecto(proyectos.get(i));
-            }
-        }
-
-        @Override
-        protected ArrayList<Proyecto> doInBackground(Void... params) {
-            InputStream fichero=getResources().openRawResource(R.raw.proyectos);
-            BufferedReader bf=new BufferedReader(new InputStreamReader(fichero));
-            String s;
-            ArrayList<Proyecto> proy=new ArrayList<>();
-            try {
-                while ((s = bf.readLine())!=null) {
-                    String[] datos = s.split("[|]");
-                    Proyecto p = new Proyecto(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5]);
-                    proy.add(p);
-                }
-            }catch(IOException ex) {
-                ex.printStackTrace();
-            }
-            return proy;
-        }
     }
 }

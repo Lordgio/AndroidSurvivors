@@ -80,10 +80,10 @@ public class ParticipantesActivity extends AppCompatActivity
         } else if (id == R.id.proyectos) {
             Intent intent_proyectos = new Intent(this, ProyectosActivity.class);
             this.startActivity(intent_proyectos);
-        } else if (id == R.id.noticias) {
+        } /*else if (id == R.id.noticias) {
             Intent intent_noticias = new Intent(this, NoticiasActivity.class);
             this.startActivity(intent_noticias);
-        }
+        }*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

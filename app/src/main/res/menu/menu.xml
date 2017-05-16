@@ -32,10 +32,10 @@
                 android:id="@+id/proyectos"
                 android:icon="@drawable/ic_proyectos"
                 android:title="Nuestros proyectos" />
-            <item
-                android:id="@+id/noticias"
-                android:icon="@drawable/ic_noticias"
-                android:title="Noticias"/>
+            <!--<item-->
+                <!--android:id="@+id/noticias"-->
+                <!--android:icon="@drawable/ic_noticias"-->
+                <!--android:title="Noticias"/>-->
 
         </menu>
     </item>
